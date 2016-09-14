@@ -18,16 +18,3 @@ describe("rewriteForMmap", function() {
     assert.equal(argumentExist(), 0);
   });
 })
-
-/**
- * Массив частичных сумм
- * для arr = [ 1, 2, 3, 4, 5 ]
- * getSums( arr ) = [ 1, 1+2, 1+2+3, 1+2+3+4, 1+2+3+4+5 ] = [ 1, 3, 6, 10, 15 ]
- */
-
-var a = [ 1, 2, 3, 4, 5 ];
-var na = [];
-a.reduce(function(sum, currentItem, index, arr){
-  na.push(sum + currentItem);
-  return sum + currentItem;
-}, 0);

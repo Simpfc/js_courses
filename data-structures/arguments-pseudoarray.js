@@ -8,6 +8,7 @@
  * 1 Проверка на аргумент-undefined
  */
 
+ // Implementation
  function  argumentExist(x) {
  	if ('0' in arguments) {
  		return 1;	
@@ -32,11 +33,12 @@ describe("argumentExist", function() {
 /**
  * 2 Сумма аргументов - Напишите функцию sum(...), которая возвращает сумму всех своих аргументов:
  */
-
-/**
- * [argumentSum description]
- * @return {[type]} [description]
- */
+// sum() = 0
+// sum(1) = 1
+// sum(1, 2) = 3
+// sum(1, 2, 3) = 6
+// sum(1, 2, 3, 4) = 10
+// sum({}, 'string', 3, 4) = 7
 function argumentSum() {
     var sum = 0;
 	for (var i = 0; i < arguments.length; i++) {
