@@ -1,0 +1,49 @@
+"use strict";
+/**
+ * Создайте дату
+ * https://learn.javascript.ru/task/new-date
+ */
+new Date(2012, 1, 20, 3, 12, 0, 0);
+
+/**
+ * Имя дня недели
+ * https://learn.javascript.ru/task/get-week-day
+ */
+function getWeekDay(d) {
+	return d.toLocaleString('ru', {
+		weekday:"short"
+	});
+}
+
+var date = new Date(2012,0,3); 
+getWeekDay(date);
+
+
+/**
+ * День недели в европейской нумерации
+ * http://plnkr.co/edit/XiOZnxHXyH2doLP3P8po?p=preview
+ */
+
+
+/**
+ * День указанное количество дней назад
+ * https://learn.javascript.ru/task/get-date-ago
+ */
+function getDateAgo(objDate, days) {
+   debugger;
+   var days = d.getDate() - parseInt(days);
+   var newdata  = new Date(objDate.getFullYear(), objDate.getMonth(), days);
+   var options = {
+	  day: 'numeric',
+	  month: 'long',
+	  year: 'numeric',
+	  
+	  // weekday: 'long',
+	  // timezone: 'UTC',
+	  // hour: 'numeric',
+	  // minute: 'numeric',
+	  // second: 'numeric'
+	};
+	return newdata.toLocaleString("ru", options) 
+
+}
