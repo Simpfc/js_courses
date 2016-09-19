@@ -29,7 +29,7 @@
   function makeBuffer() {
   var str = '';
   var buffer = function (val) {
-    if (arguments.length == 0') {
+    if (arguments.length == 0) {
       return str;
     }
     str += '' + val;
