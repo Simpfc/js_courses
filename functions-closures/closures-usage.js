@@ -5,15 +5,15 @@
  function makeBuffer() {
   var str = '';
   var buffer = function (val) {
-  	/*
-  	  В решении используется сравнение (arguments.length == 0), что правилнее чем typeof val === 'undefined'
-  	  Так как имеет место быть такой кейс
-		it("Переменной забыли происвоить зачение и вызвали buffer(someVar)", function() {
-		  var someVar;
-		  buffer(someVar);
-		  assert.equal(buffer(), "undefined");
-		});
-  	 */ 
+    /*
+      В решении используется сравнение (arguments.length == 0), что правилнее чем typeof val === 'undefined'
+      Так как имеет место быть такой кейс
+    it("Переменной забыли происвоить зачение и вызвали buffer(someVar)", function() {
+      var someVar;
+      buffer(someVar);
+      assert.equal(buffer(), "undefined");
+    });
+     */ 
     if (typeof val === 'undefined') {
       return str;
     }
@@ -63,14 +63,14 @@ function byField(type) {
 function inArray(list) {
 
     var handler = function(array) {
-    	var  newArray = [];
-   		list.forEach(function(el, i){
-   		    var searchedIndex = array.indexOf(el);
-   			if(searchedIndex >= 0) {
-   				newArray.push(array[searchedIndex]);
-   			}
-   		})
-   		return newArray;
+      var  newArray = [];
+      list.forEach(function(el, i){
+          var searchedIndex = array.indexOf(el);
+        if(searchedIndex >= 0) {
+          newArray.push(array[searchedIndex]);
+        }
+      })
+      return newArray;
     }
     return handler;
 }
@@ -78,7 +78,7 @@ function inArray(list) {
 function inBeetwen
 
 function filter (array, arrFilter) {
-	array = array || [];
+  array = array || [];
     return arrFilter(array);
 }
 
@@ -91,9 +91,9 @@ function makeArmy() {
   for (var i = 0; i < 10; i++) {
     function shooter () {
         var num = i;
-		return function() { // функция-стрелок
-      		alert(num); // выводит свой номер
-    	};
+    return function() { // функция-стрелок
+          alert(num); // выводит свой номер
+      };
     }
     shooters.push(shooter());
   }
