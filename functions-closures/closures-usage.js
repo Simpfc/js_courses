@@ -1,3 +1,65 @@
+/**
+ * Функция - строковый буфер
+ * https://learn.javascript.ru/task/stringbuffer
+ */
+ function makeBuffer() {
+  var str = '';
+  var buffer = function (val) {
+  	/*
+  	  В решении используется сравнение (arguments.length == 0), что правилнее чем typeof val === 'undefined'
+  	  Так как имеет место быть такой кейс
+		it("Переменной забыли происвоить зачение и вызвали buffer(someVar)", function() {
+		  var someVar;
+		  buffer(someVar);
+		  assert.equal(buffer(), "undefined");
+		});
+  	 */ 
+    if (typeof val === 'undefined') {
+      return str;
+    }
+    str += '' + val;
+  }
+  return buffer;
+}
+
+/**
+ * Строковый буфер с очисткой
+ * https://learn.javascript.ru/task/stringbuffer-with-clear
+ */
+  function makeBuffer() {
+  var str = '';
+  var buffer = function (val) {
+    if (arguments.length == 0') {
+      return str;
+    }
+    str += '' + val;
+  }
+  buffer.clear = function () {
+     str = '';
+  }
+  return buffer;
+}
+
+/**
+ * Сортировка
+ * https://learn.javascript.ru/task/sort-by-field
+ */
+
+function byField(type) {
+  return function (a, b)  {
+    if(!a.hasOwnProperty(type)) {
+      alert('Perpoerty was not found');
+    }
+    return a[type] > b[type] ? 1 : -1;
+
+  }
+}
+
+ 
+/**
+ * Фильтрация через функцию
+ * https://learn.javascript.ru/task/filter-through-function
+ */
 function inArray(list) {
 
     var handler = function(array) {
@@ -23,8 +85,6 @@ function filter (array, arrFilter) {
 /**
  * Армия функций
  * https://learn.javascript.ru/task/make-army
- * makeArmy description]
- * @return {[type]} [description]
  */
 function makeArmy() {
   var shooters = [];
