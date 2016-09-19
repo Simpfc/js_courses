@@ -61,6 +61,9 @@ function byField(type) {
  * https://learn.javascript.ru/task/filter-through-function
  */
 function inArray(list) {
+    if(!Array.isArray(list)) {
+      list = [list];
+    }
 
     var handler = function(array) {
       var  newArray = [];
@@ -75,13 +78,23 @@ function inArray(list) {
     return handler;
 }
 
-function inBeetwen
+function inBeetwen (from, to) {
+    var handler = function(array) {
+      var  newArray = [];
+      array.forEach(function(el, i){
+        if(el >= from && el <= to) {
+          newArray.push(el);
+        }
+      })
+      return newArray;
+    }
+    return handler;
+}
 
 function filter (array, arrFilter) {
   array = array || [];
     return arrFilter(array);
 }
-
 /**
  * Армия функций
  * https://learn.javascript.ru/task/make-army
