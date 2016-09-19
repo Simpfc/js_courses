@@ -1,16 +1,41 @@
-"use strict";
+function inArray(list) {
 
-function makeArmy() {
-  var num = null;
-  var shooters = setShooters(); 
-  function  setShooters() {
-    for (var i = 0; i < 10; i++) {
-      num = i;
-      var shooter = function() { // функция-стрелок
-       return alert(num);
-      };
-      shooters.push(shooter());
+    var handler = function(array) {
+    	var  newArray = [];
+   		list.forEach(function(el, i){
+   		    var searchedIndex = array.indexOf(el);
+   			if(searchedIndex >= 0) {
+   				newArray.push(array[searchedIndex]);
+   			}
+   		})
+   		return newArray;
     }
+    return handler;
+}
+
+function inBeetwen
+
+function filter (array, arrFilter) {
+	array = array || [];
+    return arrFilter(array);
+}
+
+/**
+ * Армия функций
+ * https://learn.javascript.ru/task/make-army
+ * makeArmy description]
+ * @return {[type]} [description]
+ */
+function makeArmy() {
+  var shooters = [];
+  for (var i = 0; i < 10; i++) {
+    function shooter () {
+        var num = i;
+		return function() { // функция-стрелок
+      		alert(num); // выводит свой номер
+    	};
+    }
+    shooters.push(shooter());
   }
 
   return shooters;
@@ -18,5 +43,6 @@ function makeArmy() {
 
 var army = makeArmy();
 
-army[0](); // стрелок выводит 10, а должен
-army[5](); // стрелок выводит 10, а должен
+army[0](); // стрелок выводит 10, а должен 0
+army[5](); // стрелок выводит 10...
+// .. все стрелки выводят 10 вместо 0,1,2...9
